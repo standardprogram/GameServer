@@ -1,12 +1,8 @@
 #coding:utf8
 
-import os
-if os.name!='nt' and os.name!='posix':
-    from twisted.internet import epollreactor
-    epollreactor.install()
-
+from gevent import monkey; monkey.patch_os()
 import json,sys
-from firefly.server.server import FFServer
+from gfirefly.server.server import FFServer
 
 if __name__=="__main__":
     args = sys.argv
