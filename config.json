@@ -5,6 +5,12 @@
         "webport": 9998
     },
     "servers": {
+        "http": {
+            "webport": 1000,
+            "rootport": 20001,
+            "name": "http",
+            "app": "app.apptest"
+        },
         "net": {
             "netport": 1000,
             "name": "gate",
@@ -31,7 +37,7 @@
     },
     "memcached": {
         "urls": [
-            "127.0.0.1:11211"
+            "127.0.0.1: 11211"
         ],
         "hostname": "test"
     }
