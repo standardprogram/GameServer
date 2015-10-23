@@ -6,18 +6,23 @@
     },
     
     "servers": {
-        "http": {
-            "webport": 1800,
-            "rootport": 1900,
-            "name": "BastionHttpServer",
-            "app": "app.apptest"
-        },
-        
-        "game": {
-            "netport": 2000,
-            "rootport": 2100,
+      	"gate":{
+    		"rootport":2000,
+    		"name":"GateServer",
+    		"app":"app.gateserver"
+    	},
+    
+    	"net":{
+    		"netport": 2100,
+    		"name":"NetServer",
+    		"remoteport":[{"rootname":"gate", "rootport":2000}],
+    		"app":"app.netserver"
+    	},
+       	
+        "player": {
+            "remoteport":[{"rootname":"gate", "rootport":2000}],
             "name": "BastionGameServer",
-            "app": "app.game"
+            "app": "app.player"
         }
     },
     
