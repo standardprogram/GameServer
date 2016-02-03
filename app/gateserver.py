@@ -1,6 +1,5 @@
-
-
 from gfirefly.server.globalobject import GlobalObject, rootserviceHandle
+
 
 @rootserviceHandle
 def roothandle(data):

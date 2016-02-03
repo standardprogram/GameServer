@@ -1,10 +1,11 @@
 #coding:utf8
 
+from socket import AF_INET, SOCK_STREAM, socket
+import struct
+from thread import start_new
 import time
 
-from socket import AF_INET,SOCK_STREAM,socket
-from thread import start_new
-import struct
+
 HOST='localhost'
 PORT=1000
 BUFSIZE=1024

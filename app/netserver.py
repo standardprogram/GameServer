@@ -2,10 +2,12 @@
 
 from gfirefly.server.globalobject import GlobalObject, netserviceHandle
 
+
 @netserviceHandle
-def nethandle_110(_conn, data):
-    return "nethandle_110 ok"
-    
+def nethandle_1001(_conn, data):
+    return GlobalObject().ne
+
+
 @netserviceHandle
-def nethandle_120(_conn, data):
+def nethandle_2001(_conn, data):
     return GlobalObject().remote["gate"].callRemote("game1handle",data)

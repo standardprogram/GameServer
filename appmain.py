@@ -1,8 +1,10 @@
 #coding:utf8
 
 from gevent import monkey; monkey.patch_os()
-import json,sys
+import json, sys
+
 from gfirefly.server.server import FFServer
+
 
 if __name__=="__main__":
     args = sys.argv

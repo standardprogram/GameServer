@@ -21,23 +21,30 @@
        	
         "player": {
             "remoteport":[{"rootname":"gate", "rootport":2000}],
-            "name": "BastionGameServer",
-            "app": "app.player"
+            "name": "PlayerManager",
+            "app": "app.playermanager"
+        },
+        
+        "bastion": {
+            "remoteport":[{"rootname":"gate", "rootport":2000}],
+            "name": "BastionManager",
+            "app": "app.bastionmanager"
         }
     },
     
     "db": {
         "host": "localhost",
         "user": "root",
-        "passwd": "111",
+        "passwd": "052716",
         "port": 3306,
-        "db": "test",
+        "db": "GameData",
         "charset": "utf8"
     },
+    
     "memcached": {
         "urls": [
             "127.0.0.1: 11211"
         ],
-        "hostname": "test"
+        "hostname": "localhostß"
     }
 }
