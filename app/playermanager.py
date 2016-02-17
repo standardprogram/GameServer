@@ -1,36 +1,19 @@
 
-
-from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
 import json
+from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
+from gfirefly.dbentrust.madminanager import MAdminManager
+from gfirefly.dbentrust.mmode import MAdmin
 
+
+def __init__(self):
+    MAdminManager().registe("GameData")
+    self.tbplayer = MAdmin("user", "uid")
 
 @remoteserviceHandle("gate")
-def GetPlayerData(data):
-    print(data)
-    
-    
-    dic = {}
-    dic["respId"] = 1001
-    dic["uid"] = data
+def GetPlayerData(uid):
+    print(uid)
 
-    '''
-    uid = "0001"
-    openid = ""
-    nickname = ""
-    avatar = ""
-    gender = ""
-    camp = ""
-    
-    exp = 1000
-    level = 2
-    energyMax = 0
-    energy = 0
-    
-    lat = 0.0
-    lng = 0.0
-    '''
-    
-    
-    return json.dumps(dic)
+    playerData = self.tbplayer.getObjData(uid)   
+    return json.dumps(playerData)
 
     
