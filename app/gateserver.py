@@ -1,11 +1,10 @@
-
-
 from gfirefly.server.globalobject import GlobalObject, rootserviceHandle
 
-@rootserviceHandle
-def roothandle(data):
-    return "gate ok"
 
 @rootserviceHandle
-def game1handle(data):
-    return GlobalObject().root.callChild("player","game1end",data)
+def PlayerEventHandle(data):
+    return GlobalObject().root.callChild("player","GetPlayerData",data)
+
+@rootserviceHandle
+def BastionEventHandle(data):
+    return GlobalObject().root.callChild("bastion","GetNearbyBastionList",data)

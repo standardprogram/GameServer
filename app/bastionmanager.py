@@ -1,9 +1,10 @@
 
 
 from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
+from gfirefly.dbentrust.dbpool import dbpool
 
 @remoteserviceHandle("gate")
-def game1end(data):
-    return "echo_1 ok"
+def GetNearbyBastionList(data):
+    return "GetNearByBastionList ok"
 
     
