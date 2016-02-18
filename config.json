@@ -22,13 +22,17 @@
         "player": {
             "remoteport":[{"rootname":"gate", "rootport":2000}],
             "name": "PlayerManager",
-            "app": "app.playermanager"
+            "app": "app.playermanager",
+            "db":"true",
+            "mem":"true"
         },
         
         "bastion": {
             "remoteport":[{"rootname":"gate", "rootport":2000}],
             "name": "BastionManager",
-            "app": "app.bastionmanager"
+            "app": "app.bastionmanager",
+            "db":"true",
+            "mem":"true"
         }
     },
     
@@ -43,7 +47,7 @@
     
     "memcached": {
         "urls": [
-            "127.0.0.1: 11211"
+            "127.0.0.1:11211"
         ],
         "hostname": "localhost"
     }
