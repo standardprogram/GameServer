@@ -1,5 +1,6 @@
 
 import json
+import base64
 from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
 from gfirefly.dbentrust.madminanager import MAdminManager
 from gfirefly.dbentrust.mmode import MAdmin
@@ -18,6 +19,8 @@ def GetPlayerData(param):
 
     _userAdmin = MAdmin('user', 'uid') 
     response = _userAdmin.getObjData(d['uid'])
+    response['avatar'] = base64.b64encode(response['avatar'])
+    
     response['reqtype'] = 1
     response['reqcode'] = d['reqcode']
 
