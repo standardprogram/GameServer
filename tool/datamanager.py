@@ -5,4 +5,4 @@ from gfirefly.dbentrust.mmode import MAdmin
 
 GameDataAdmin = MAdminManager().registe("GameData")
 UserDataTable = MAdmin('user', 'uid') 
-BastionDataTable = MAdmin('bastion', 'id')
+BastionDataTable = MAdmin('bastion', 'id', fk='status')

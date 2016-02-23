@@ -1,7 +1,10 @@
-
+import json
 import math
 from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
 from datamanager import BastionDataTable
+
+
+REQ_TYPE = 2
 
 @remoteserviceHandle("gate")
 def GetNearbyBastionList(param):
@@ -13,14 +16,24 @@ def GetNearbyBastionList(param):
     lng = float(req['lng'])
     lat = float(req['lat'])
     
-    pklist = BastionDataTable.getAllPkByFk()
+    pklist = BastionDataTable.getAllPkByFk(0)
     allBastions = BastionDataTable.getObjList(pklist)
     for bastion in allBastions:
-        if(GetDistance(lat, lng, bastion['lat'], bastion['lng']) < 3000):
-            bastionlist.append(bastion)
-        
+        data = bastion.getData()
+        lat2 = float(data['lat'])
+        lng2 = float(data['lng'])
+        distance = GetDistance(lat, lng, lat2, lng2)
+        print(distance)
+        if(distance < 3):
+            bastionlist.append(data)
     
-    return json.dumps(bastionlist)
+    
+    response = {}
+    response['list'] = bastionlist
+    response['reqtype'] = REQ_TYPE
+    response['reqcode'] = req['reqcode']
+
+    return json.dumps(response)
 
 
 EARTH_RADIUS = 6378.137   
@@ -30,9 +43,9 @@ def GetDistance(lat1, lng1, lat2, lng2):
     a = radLat1 - radLat2
     b = math.radians(lng1) - math.radians(lng2)
     
-    s = 2 * math.asin(math.sqrt(Math.Pow(math.sin(a/2),2) 
+    s = 2 * math.asin(math.sqrt(math.pow(math.sin(a/2),2) 
             + math.cos(radLat1)*math.cos(radLat2)*math.pow(math.sin(b/2),2)))
     
     s = s*EARTH_RADIUS
-    s = math.Round(s*10000)/10000;
+    s = round(s*10000)/10000;
     return s
