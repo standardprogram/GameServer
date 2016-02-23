@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//tool/clienttest.py=utf8
+encoding//test/clienttest.py=utf8
 encoding/<project>=UTF-8
 encoding/appmain.py=utf8
 encoding/startmaster.py=utf8
