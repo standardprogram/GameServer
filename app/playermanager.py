@@ -1,3 +1,4 @@
+#coding:utf8
 
 import json
 import base64
@@ -20,6 +21,12 @@ def GetPlayerData(param):
     response['reqtype'] = REQ_TYPE
     response['reqcode'] = req['reqcode']
 
+    print(response)
     return json.dumps(response)
 
+    
+@remoteserviceHandle("gate")
+def ReportLocation(param):
+    print(param)
+    return "Receiced param"
     

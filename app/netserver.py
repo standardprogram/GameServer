@@ -7,6 +7,10 @@ from gfirefly.server.globalobject import GlobalObject, netserviceHandle
 def nethandle_1001(_conn, data):
     return GlobalObject().remote["gate"].callRemote("PlayerEventHandle", data)
 
+@netserviceHandle
+def nethandle_1101(_conn, data):
+    return GlobalObject().remote["gate"].callRemote("PlayerReportLocation", data)
+
 
 @netserviceHandle
 def nethandle_2001(_conn, data):
