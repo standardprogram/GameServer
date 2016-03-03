@@ -1,7 +1,8 @@
 import json
 import math
 from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
-from tool.datamanager import BastionDataTable
+from datamanager import BastionDataTable
+
 
 
 REQ_TYPE = 2

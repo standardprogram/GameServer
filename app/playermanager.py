@@ -5,7 +5,7 @@ import base64
 from gfirefly.server.globalobject import GlobalObject, remoteserviceHandle
 from gfirefly.dbentrust.madminanager import MAdminManager
 from gfirefly.dbentrust.mmode import MAdmin
-from tool.datamanager import UserDataTable
+from datamanager import UserDataTable
 
 
 REQ_TYPE = 1
